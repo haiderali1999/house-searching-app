@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "address":"12 king street",
+        "country":"Pakistan",
+        "description":"As I enter through the front door, a sense of familiarity envelops me. The living room, adorned with cozy furniture and framed memories, is the heart of our home. Sunlight streams in through the curtains, casting a warm glow on the worn wooden floor.",
+        "price":9000,
+        "photo":"house1"
+    },
+    {
+        "id":2,
+        "address":"12 king street 2",
+        "country":"Pakistan 2",
+        "description":"As I enter through the front door, a sense of familiarity envelops me. The living room, adorned with cozy furniture and framed memories, is the heart of our home. Sunlight streams in through the curtains, casting a warm glow on the worn wooden floor.",
+        "price":9000,
+        "photo":"house2"
+    },
+    {
+        "id":2,
+        "address":"12 dubai street",
+        "country":"dubai",
+        "description":"As I enter through the front door, a sense of familiarity envelops me. The living room, adorned with cozy furniture and framed memories, is the heart of our home. Sunlight streams in through the curtains, casting a warm glow on the worn wooden floor.",
+        "price":9000,
+        "photo":"house3"
+    }
+]
