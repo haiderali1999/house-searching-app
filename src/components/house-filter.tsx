@@ -1,34 +1,36 @@
-// interface FeatureHouse {
-//   id: number;
-//   address: string;
-//   country: string;
-//   description: string;
-//   price: number;
-//   photo: number;
-// }
+interface FeatureHouse {
+  id: number;
+  address: string;
+  country: string;
+  description: string;
+  price: number;
+  photo: number;
+}
 
-// interface HouseFilterProps {
-//   allHouses: any[];
-// }
-import { useContext } from "react"
+import { ChangeEvent, useContext } from "react";
 // change later
-import { useNavigate } from "react-router-dom"
-import HousesContext from "../context/housesContext"
+import { useNavigate } from "react-router-dom";
+import HousesContext from "../context/housesContext";
 
 export default function HouseFilter() {
   // const { allHouses } = props;
-  const allHouses = useContext(HousesContext)
-  const navigation = useNavigate()
-  const countries = allHouses
-    ? Array.from(new Set(allHouses.map((h: any) => h.country)))
-    : []
+  const allHouses: FeatureHouse[] = useContext(HousesContext);
+  const navigation = useNavigate();
+  const countries: string[] = allHouses
+    ? Array.from(new Set(allHouses.map((h) => h.country)))
+    : [];
 
-  countries.unshift(null)
+  countries.unshift("Default option");
+  // countries.unshift(null);
 
-  const onSearchChange = (e: any) => {
-    const country = e.target.value
-    navigation(`searchresults/${country}`)
-  }
+  const onSearchChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const country = event.target.value;
+    if (country === "Default option") {
+      navigation("/");
+    } else {
+      navigation(`searchresults/${country}`);
+    }
+  };
   return (
     <div className="row mt-3">
       <div className="offset-sm-2 col-sm-4">
@@ -44,5 +46,5 @@ export default function HouseFilter() {
         </select>
       </div>
     </div>
-  )
+  );
 }

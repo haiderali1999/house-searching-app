@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 
 export default function Inquiry() {
   const [contactInfo, setContactInfo] = useState({
@@ -8,10 +8,10 @@ export default function Inquiry() {
   });
   const counterRef = useRef(0);
   const inputRef = useRef(null);
-  const onChange = (e: any) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setContactInfo({ ...contactInfo, [e.target.id]: e.target.value });
   };
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: FormEvent) => {
     counterRef.current++;
     // inputRef?.current?.value = "hello";
     console.log(counterRef.current);
